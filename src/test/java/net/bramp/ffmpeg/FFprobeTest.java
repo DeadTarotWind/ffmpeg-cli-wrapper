@@ -115,4 +115,11 @@ public class FFprobeTest {
 
     // System.out.println(FFmpegUtils.getGson().toJson(info));
   }
+
+  @Test
+  public void testProbeShowPackets() throws IOException {
+      FFmpegProbeResult info = ffprobe.probe(Samples.big_buck_bunny_720p_1mb);
+
+      assertThat(info.getPackets().size(), is(381));
+  }
 }

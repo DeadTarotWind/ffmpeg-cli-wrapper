@@ -85,7 +85,6 @@ public class FFprobe extends FFcommon {
     ImmutableList.Builder<String> args = new ImmutableList.Builder<String>();
 
     // TODO Add:
-    // .add("--show_packets")
     // .add("--show_frames")
 
     args.add(path).add("-v", "quiet");
@@ -98,6 +97,7 @@ public class FFprobe extends FFcommon {
         .add("-show_error")
         .add("-show_format")
         .add("-show_streams")
+        .add("-show_packets")
         .add(mediaPath);
 
     Process p = runFunc.run(args.build());
